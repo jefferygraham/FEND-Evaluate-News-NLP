@@ -20,6 +20,7 @@ const postURLData = async (url = '', data = {}) => {
 }
 
 const updateUI = (data) => {
+    console.log(data)
     document.getElementById('results').innerHTML = data.text
 }
 
