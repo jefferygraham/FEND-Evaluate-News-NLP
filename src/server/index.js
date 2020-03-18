@@ -31,11 +31,11 @@ app.get('/', function (req, res) {
 app.post('/testing', (req, res) => {
     let data = req.body;
     // console.log(data.url);
-    textapi.entities({
+    textapi.classify({
         url: `${data.url}`
     }, function (error, response) {
         if (error === null) {
-            res.send(response.entities)
+            res.send(response)
         }
     });
 
