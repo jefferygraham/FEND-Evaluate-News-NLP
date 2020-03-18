@@ -29,13 +29,16 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('url').value
 
-    Client.checkURL(formText)
-
-    console.log("::: Form Submitted :::")
-    postURLData('http://localhost:8081/testing', { url: formText })
-        .then((function (data) {
-            updateUI(data)
-        }))
+    if (Client.checkURL(formText)) {
+        console.log("::: Form Submitted :::")
+        postURLData('http://localhost:8081/testing', { url: formText })
+            .then((function (data) {
+                updateUI(data)
+            }))
+    }
+    else {
+        alert('Please enter a valid URL.')
+    }
 }
 
 export { handleSubmit }
