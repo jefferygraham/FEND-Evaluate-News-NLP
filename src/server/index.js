@@ -12,13 +12,6 @@ var textapi = new aylien({
     application_key: process.env.API_KEY
 });
 
-
-var json = {
-    'title': 'test json response',
-    'message': 'this is a message',
-    'time': 'now'
-}
-
 const app = express()
 app.use(cors())
 // to use json
