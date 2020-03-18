@@ -37,6 +37,9 @@ app.post('/testing', (req, res) => {
         if (error === null) {
             res.send(response)
         }
+        else {
+            console.log(error)
+        }
     });
 
 })

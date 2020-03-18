@@ -1,5 +1,4 @@
 const postURLData = async (url = '', data = {}) => {
-    console.log(url)
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -12,7 +11,7 @@ const postURLData = async (url = '', data = {}) => {
 
     try {
         const newData = await response.json();
-        // console.log(newData)
+        console.log(newData)
         return newData;
     } catch (error) {
         console.log("error", error);
