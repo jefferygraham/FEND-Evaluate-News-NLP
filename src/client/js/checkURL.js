@@ -5,10 +5,4 @@ function checkURL(inputURL) {
     return regex.test(inputURL);
 }
 
-function filterByTerm(inputArr, searchTerm) {
-    return inputArr.filter(function (arrayElement) {
-        return arrayElement.url.match(searchTerm);
-    });
-}
-
-export { checkURL, filterByTerm }
+module.exports = checkURL;
