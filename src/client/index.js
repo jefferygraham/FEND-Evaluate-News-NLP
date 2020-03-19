@@ -1,3 +1,5 @@
+require('./styles/mystyles.scss')
+
 import { checkURL } from './js/checkURL'
 import { handleSubmit } from './js/formHandler'
 
