@@ -10,6 +10,7 @@ let textapi = new aylien({
 
 const path = require('path')
 const express = require('express')
+const mockAPIResponse = require('./mockAPI.js')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
@@ -24,25 +25,31 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static('dist'))
 
+console.log(JSON.stringify(mockAPIResponse))
+
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
 
-app.post('/testing', (req, res) => {
-    let data = req.body;
-    // console.log(data.url);
-    textapi.classify({
-        url: `${data.url}`
-    }, function (error, response) {
-        if (error === null) {
-            res.send(response)
-        }
-        else {
-            console.log(error)
-        }
-    });
-
+app.get('/test', function (req, res) {
+    res.json(mockAPIResponse);
 })
+
+// app.post('/testing', (req, res) => {
+//     let data = req.body;
+//     // console.log(data.url);
+//     textapi.sentiment({
+//         url: `${data.url}`
+//     }, function (error, response) {
+//         if (error === null) {
+//             res.send(response)
+//         }
+//         else {
+//             console.log(error)
+//         }
+//     });
+
+// })
 
 // app.get('/test', function async(req, res, url) {
 //     try {
