@@ -2,36 +2,44 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Test</title>
         <link rel="stylesheet" href="/styles/resets.css">
+        <link rel="stylesheet" href="/styles/mystyles.css">
         <link rel="stylesheet" href="/styles/base.css">
         <link rel="stylesheet" href="/styles/header.css">
         <link rel="stylesheet" href="/styles/form.css">
         <link rel="stylesheet" href="/styles/footer.css">
-        <link rel="stylesheet" href="/styles/mystyles.css">
     </head>
 
     <body>
-
         <header>
-            <div class="">
-                Logo
+          <section class="hero is-primary">
+            <div class="hero-body">
+              <div class="container">
+                <h1 class="title">
+                  Article Analyzer
+                </h1>
+                <h2 class="subtitle">
+                  Find out if an article is objective or subjective.
+                </h2>
+              </div>
             </div>
-            <div class="">
-                navigation
-            </div>
+          </section>
         </header>
 
         <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="url" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            <section>
+            <section id="entry" class="field section">
+              <form class="control" onsubmit="return Client.handleSubmit(event)">
+                <label class="label">Article URL</label>
+                <input class="input" id="url" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter article URL">
+                <input class="button is-primary" type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+              </form>
+            </section>
 
-            <section>
-                <strong>Form Results:</strong>
+            <section id="results" class="section">
+                <strong>Results:</strong>
                 <div id="results">
                     <div id="polarity"></div>
                     <div id="subjectivity"></div>
@@ -41,38 +49,8 @@
             </section>
         </main>
 
-        <h1 class="title">
-            Bulma
-          </h1>
-    
-          <p class="subtitle">
-            Modern CSS framework based on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Flexbox</a>
-          </p>
-    
-          <div class="field">
-            <div class="control">
-              <input class="input" type="text" placeholder="Input">
-            </div>
-          </div>
-    
-          <div class="field">
-            <p class="control">
-              <span class="select">
-                <select>
-                  <option>Select dropdown</option>
-                </select>
-              </span>
-            </p>
-          </div>
-    
-          <div class="buttons">
-            <a class="button is-primary">Primary</a>
-            <a class="button is-link">Link</a>
-          </div>s
-
-        <footer>
-            <p>This is a footer</p>
+        <footer class="footer">
+          <p>&copy; Copyright 2020</p>
         </footer>
-
     </body>
 </html>

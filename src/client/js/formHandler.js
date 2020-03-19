@@ -38,10 +38,10 @@ function handleSubmit(event) {
         })
         .then(function (data) {
             console.log(data)
-            document.getElementById('polarity').innerHTML = data.polarity
-            document.getElementById('subjectivity').innerHTML = data.subjectivity
-            document.getElementById('polarity-confidence').innerHTML = data.polarity_confidence
-            document.getElementById('subjectivity-confidence').innerHTML = data.subjectivity_confidence
+            document.getElementById('polarity').innerHTML = `Polarity: ${data.polarity}`
+            document.getElementById('polarity-confidence').innerHTML = `Polarity Confidence: ${data.polarity_confidence}`
+            document.getElementById('subjectivity').innerHTML = `Subjectivty: ${data.subjectivity}`
+            document.getElementById('subjectivity-confidence').innerHTML = `Subjectivity Confidence: ${data.subjectivity_confidence}`
         })
 
     // if (Client.checkURL(formText)) {
