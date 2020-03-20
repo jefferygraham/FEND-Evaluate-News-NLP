@@ -5,4 +5,4 @@ function checkURL(inputURL) {
     return regex.test(inputURL);
 }
 
-module.exports = checkURL;
+export { checkURL }

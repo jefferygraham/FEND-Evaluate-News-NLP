@@ -19,7 +19,10 @@ const postURLData = async (url = '', data = {}) => {
 }
 
 const updateUI = (data) => {
-    document.getElementById('results').innerHTML = data.text
+    document.getElementById('polarity').innerHTML = `Polarity: ${data.polarity}`
+    document.getElementById('polarity-confidence').innerHTML = `Polarity Confidence: ${data.polarity_confidence}`
+    document.getElementById('subjectivity').innerHTML = `Subjectivty: ${data.subjectivity}`
+    document.getElementById('subjectivity-confidence').innerHTML = `Subjectivity Confidence: ${data.subjectivity_confidence}`
 }
 
 
@@ -29,31 +32,31 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('url').value
 
-    Client.checkURL(formText)
+    // Client.checkURL(formText)
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
-        .then(res => {
-            return res.json()
-        })
-        .then(function (data) {
-            console.log(data)
-            document.getElementById('polarity').innerHTML = `Polarity: ${data.polarity}`
-            document.getElementById('polarity-confidence').innerHTML = `Polarity Confidence: ${data.polarity_confidence}`
-            document.getElementById('subjectivity').innerHTML = `Subjectivty: ${data.subjectivity}`
-            document.getElementById('subjectivity-confidence').innerHTML = `Subjectivity Confidence: ${data.subjectivity_confidence}`
-        })
+    // console.log("::: Form Submitted :::")
+    // fetch('http://localhost:8081/test')
+    //     .then(res => {
+    //         return res.json()
+    //     })
+    //     .then(function (data) {
+    //         console.log(data)
+    //         document.getElementById('polarity').innerHTML = `Polarity: ${data.polarity}`
+    //         document.getElementById('polarity-confidence').innerHTML = `Polarity Confidence: ${data.polarity_confidence}`
+    //         document.getElementById('subjectivity').innerHTML = `Subjectivty: ${data.subjectivity}`
+    //         document.getElementById('subjectivity-confidence').innerHTML = `Subjectivity Confidence: ${data.subjectivity_confidence}`
+    //     })
 
-    // if (Client.checkURL(formText)) {
-    //     console.log("::: Form Submitted :::")
-    //     postURLData('http://localhost:8081/testing', { url: formText })
-    //         .then((function (data) {
-    //             updateUI(data)
-    //         }))
-    // }
-    // else {
-    //     alert('Please enter a valid URL.')
-    // }
+    if (Client.checkURL(formText)) {
+        console.log("::: Form Submitted :::")
+        postURLData('http://localhost:8081/testing', { url: formText })
+            .then((function (data) {
+                updateUI(data)
+            }))
+    }
+    else {
+        alert('Please enter a valid URL.')
+    }
 }
 
-module.exports = handleSubmit  
+export { handleSubmit }
