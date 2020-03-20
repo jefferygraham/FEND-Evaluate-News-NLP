@@ -56,4 +56,4 @@ function handleSubmit(event) {
     // }
 }
 
-export { handleSubmit }
+module.exports = handleSubmit  

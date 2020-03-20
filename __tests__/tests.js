@@ -1,5 +1,5 @@
 const checkURL = require('../src/client/js/checkURL');
-// const handleSubmit = require('../src/client/js/formHandler')
+const handleSubmit = require('../src/client/js/formHandler')
 
 describe("Check URL", () => {
     test("see if entry is a valid URL", () => {
@@ -12,12 +12,9 @@ describe("Check URL", () => {
     });
 });
 
-// describe('Contact API', () => {
-//     test('see if app gets a response from Aylien API'), () => {
-//         const input = 'https://techcrunch.com/2015/04/06/john-oliver-just-changed-the-surveillance-reform-debate/';
+describe('Test, the function "handleSubmit()" should exist' , () => {
+    test('It should return true', async () => {
+        expect(handleSubmit).toBeDefined();
+    });
+});
 
-//         const output = true;
-
-//         expect(handleSubmit())
-//     }
-// })
