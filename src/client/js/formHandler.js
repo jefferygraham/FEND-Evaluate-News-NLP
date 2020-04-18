@@ -49,7 +49,7 @@ function handleSubmit(event) {
 
     if (Client.checkURL(formText)) {
         console.log("::: Form Submitted :::")
-        postURLData('http://localhost:8081/testing', { url: formText })
+        postURLData('/testing', { url: formText })
             .then((function (data) {
                 updateUI(data)
             }))
