@@ -2,11 +2,15 @@
   "name": "evaluate-news-nlp",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "12.16.x"
+  },
   "scripts": {
     "test": "jest --coverage",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+    "build-dev": "webpack-dev-server  --config webpack.dev.js --open",
+    "heroku-postbuild": "webpack -p"
   },
   "keywords": [],
   "author": "",
